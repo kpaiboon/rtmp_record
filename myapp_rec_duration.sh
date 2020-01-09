@@ -36,7 +36,7 @@ echo "Wait for ${ForceWaitSecond} seconds to start"
 sleep ${ForceWaitSecond}
 
 #brake exit()
-exit 1
+#exit 1
 
 
 mkdir -p $conf_destdir
