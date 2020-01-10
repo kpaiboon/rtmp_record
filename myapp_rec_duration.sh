@@ -22,11 +22,11 @@ while true; do
 
 Now_time=$(date +%"H%M%S")
 Now_date=$(date +%F)
+Now_hour=$(date +%"H")
 
 conf_url="rtmp://67.203.13.26:26998/live/$my_id/$my_ch/2"
-#conf_destdir="/home/user/mystorage/D$Now_date/$my_id"
 
-conf_destdir="/media/user/276D-167A/mystorage/D$Now_date/$my_id"
+conf_destdir="/media/user/276D-167A/mystorage/D$Now_date/H$Now_hour/$my_id"
 conf_destimage="${conf_destdir}/vid_${my_id}-ch${my_ch}--${Now_date}_${Now_time}.mp4"
 
 echo $conf_url
@@ -37,8 +37,8 @@ ForceWaitSecond=2
 echo "Wait for ${ForceWaitSecond} seconds to start"
 sleep ${ForceWaitSecond}
 
-#brake exit()
-#exit 1
+
+#exit 1 #brake point exit()
 
 
 mkdir -p $conf_destdir
