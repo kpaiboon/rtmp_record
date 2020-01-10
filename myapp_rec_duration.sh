@@ -43,10 +43,10 @@ sleep ${ForceWaitSecond}
 
 mkdir -p $conf_destdir
 
-#ffmpeg -nostdin -y -i "$conf_url" -t 00:05:00 $conf_destimage
-##  -use_wallclock_as_timestamps true # before  -i 
+ffmpeg -nostdin -y -i "$conf_url" -t 00:05:00 $conf_destimage
 
-ffmpeg -nostdin -y  -use_wallclock_as_timestamps true -i "$conf_url" -t 00:05:00 $conf_destimage
+##  -use_wallclock_as_timestamps true # before  -i  , this high cost cpu usage 90%
+#ffmpeg -nostdin -y  -use_wallclock_as_timestamps true -i "$conf_url" -t 00:05:00 $conf_destimage
 
 
 # .end Loop 
