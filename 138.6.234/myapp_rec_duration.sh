@@ -58,7 +58,7 @@ mkdir -p $conf_destdir
 #ffmpeg -nostdin -y  -use_wallclock_as_timestamps true -i "$conf_url" -t 00:05:00 $conf_destimage
 
 #Test one
-## -c copy , raw copy => 3 time large storage, no-cpu
+## -c copy , raw copy => 1.2-1.5 time large storage, no-cpu
 ffmpeg -nostdin -y -i "$conf_url" -c copy -timeout 1 -t 00:04:00 $conf_destimage
 
 
