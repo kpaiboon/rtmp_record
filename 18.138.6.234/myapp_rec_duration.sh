@@ -21,8 +21,12 @@ my_ch="$ARGV_ch"
 while true; do
 
 Now_time=$(date +%"H%M%S")
-Now_date=$(date +%F)
+#Now_date=$(date +%F)
+Now_date=$(date +%"Y%m%d")
 Now_hour=$(date +%"H")
+
+echo ${Now_date}
+
 
 conf_url="rtmp://0.0.0.0:26998/live/$my_id/$my_ch/2"
 
@@ -33,7 +37,8 @@ echo $conf_url
 echo $conf_destdir
 echo $conf_destimage
 
-ForceWaitSecond=2
+ForceWaitSecond=3
+#ForceWaitSecond=2
 echo "Wait for ${ForceWaitSecond} seconds to start"
 sleep ${ForceWaitSecond}
 
