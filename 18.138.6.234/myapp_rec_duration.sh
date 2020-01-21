@@ -24,9 +24,9 @@ Now_time=$(date +%"H%M%S")
 Now_date=$(date +%F)
 Now_hour=$(date +%"H")
 
-conf_url="rtmp://127.0.0.1:26998/live/$my_id/$my_ch/2"
+conf_url="rtmp://67.203.13.26:26998/live/$my_id/$my_ch/2"
 
-conf_destdir="/home/ubuntu/gallery/rec/D$Now_date/H$Now_hour/$my_id"
+conf_destdir="/media/user/276D-167A/mystorage/D$Now_date/H$Now_hour/$my_id"
 conf_destimage="${conf_destdir}/vid_${my_id}-ch${my_ch}--${Now_date}_${Now_time}.mp4"
 
 echo $conf_url
@@ -45,16 +45,12 @@ mkdir -p $conf_destdir
 
 #ffmpeg -nostdin -y -i "$conf_url" -t 00:05:00 $conf_destimage
 
-#Best One
 ## -timeout 2 (unit second) = 2 sec
-#ffmpeg -nostdin -y -i "$conf_url" -timeout 2 -t 00:05:05 $conf_destimage
+
+ffmpeg -nostdin -y -i "$conf_url" -timeout 5 -t 00:05:00 $conf_destimage
 
 ##  -use_wallclock_as_timestamps true # before  -i  , this high cost cpu usage 90%
 #ffmpeg -nostdin -y  -use_wallclock_as_timestamps true -i "$conf_url" -t 00:05:00 $conf_destimage
-
-#Test one
-## -c copy , raw copy => 3 time large storage, no-cpu
-ffmpeg -nostdin -y -i "$conf_url" -c copy -timeout 1 -t 00:05:05 $conf_destimage
 
 
 # .end Loop 
