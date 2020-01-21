@@ -16,13 +16,18 @@ sleep ${ForceWaitSecond}
 #So with a newer version you can simply 
 #use 'killall -INT' to send them SIGINT instead of SIGTERM, and they should exit cleanly.
 
-killall -9 ${shname}
-sleep 1
+## signal(SIGINT , sigterm_handler); /* Interrupt (ANSI).    */
+## signal(SIGTERM, sigterm_handler); /* Termination (ANSI).  */
+
 killall -INT ffmpeg
+killall -15 ffmpeg
+sleep 1
+killall -15 ${shname}
 sleep 1
 
+
 killall -9 ${shname}
-killall -9 ffmpeg
+killall -15 ffmpeg
 
 
 ForceWaitSecond=3

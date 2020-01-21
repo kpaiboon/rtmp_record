@@ -59,7 +59,7 @@ mkdir -p $conf_destdir
 
 #Test one
 ## -c copy , raw copy => 3 time large storage, no-cpu
-ffmpeg -nostdin -y -i "$conf_url" -c copy -timeout 1 -t 00:05:05 $conf_destimage
+ffmpeg -nostdin -y -i "$conf_url" -c copy -timeout 1 -t 00:04:00 $conf_destimage
 
 
 # .end Loop 
