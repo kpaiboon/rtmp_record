@@ -1,5 +1,10 @@
-fsname="/home/ubuntu/gallery/myapp_rec_duration.sh"
+dirname="/home/ubuntu/gallery"
 shname="myapp_rec_duration.sh"
+fsname="${dirname}/${shname}"
+
+echo ${fsname}
+
+#exit 1 #brake point exit()
 
 ForceWaitSecond=2
 echo "Wait for ${ForceWaitSecond} seconds to start"
@@ -31,18 +36,4 @@ ${fsname} 0861585040494534 2 &
 ${fsname} 0861585040494534 1 &
 
 
-
-
-
-
-
 echo "done"
-
-
-
-
-
-
-
-
-

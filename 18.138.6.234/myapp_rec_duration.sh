@@ -45,12 +45,16 @@ mkdir -p $conf_destdir
 
 #ffmpeg -nostdin -y -i "$conf_url" -t 00:05:00 $conf_destimage
 
+#Best One
 ## -timeout 2 (unit second) = 2 sec
-
-ffmpeg -nostdin -y -i "$conf_url" -timeout 3 -t 00:05:05 $conf_destimage
+#ffmpeg -nostdin -y -i "$conf_url" -timeout 2 -t 00:05:05 $conf_destimage
 
 ##  -use_wallclock_as_timestamps true # before  -i  , this high cost cpu usage 90%
 #ffmpeg -nostdin -y  -use_wallclock_as_timestamps true -i "$conf_url" -t 00:05:00 $conf_destimage
+
+#Test one
+## -c copy , raw copy => 3 time large storage, no-cpu
+ffmpeg -nostdin -y -i "$conf_url" -c copy -timeout 1 -t 00:05:05 $conf_destimage
 
 
 # .end Loop 
