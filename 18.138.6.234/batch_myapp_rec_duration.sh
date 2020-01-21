@@ -10,8 +10,16 @@ ForceWaitSecond=2
 echo "Wait for ${ForceWaitSecond} seconds to start"
 sleep ${ForceWaitSecond}
 
+#ffmpeg
+#Newer versions of ffmpeg don't use 'q' anymore, at least on Ubuntu Oneiric, 
+#instead they say to press Ctrl+C to stop them. 
+#So with a newer version you can simply 
+#use 'killall -INT' to send them SIGINT instead of SIGTERM, and they should exit cleanly.
+
 killall -9 ${shname}
-killall -9 ffmpeg
+sleep 1
+killall -INT ffmpeg
+sleep 1
 
 killall -9 ${shname}
 killall -9 ffmpeg
