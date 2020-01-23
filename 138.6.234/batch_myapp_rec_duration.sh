@@ -20,17 +20,17 @@ sleep ${ForceWaitSecond}
 ## signal(SIGTERM, sigterm_handler); /* Termination (ANSI).  */
 
 pkill -INT ffmpeg
-sleep 0.3
+sleep 0.2
 pkill -15 ffmpeg
 sleep 0.3
 killall -15 ${shname}
-sleep 0.3
+sleep 0.2
 
 killall -9 ${shname}
 pkill -15 ffmpeg
 
 
-ForceWaitSecond=3
+ForceWaitSecond=1
 echo "Wait for ${ForceWaitSecond} seconds to start backgroud process"
 sleep ${ForceWaitSecond}
 
