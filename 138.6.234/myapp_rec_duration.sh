@@ -31,7 +31,7 @@ echo ${Now_date}
 conf_url="rtmp://0.0.0.0:26998/live/$my_id/$my_ch/2"
 
 conf_destdir="/home/ubuntu/gallery/rec/D$Now_date/H$Now_hour/$my_id"
-conf_destimage="${conf_destdir}/vid_${my_id}-ch${my_ch}--${Now_date}_${Now_time}.mp4"
+conf_destimage="${conf_destdir}/vid-${my_id}-ch${my_ch}--${Now_date}_${Now_time}.mp4"
 
 echo $conf_url
 echo $conf_destdir
