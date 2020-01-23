@@ -20,7 +20,7 @@ sleep ${ForceWaitSecond}
 ## signal(SIGTERM, sigterm_handler); /* Termination (ANSI).  */
 
 pkill -INT ffmpeg
-sleep 0.2
+sleep 0.3
 pkill -15 ffmpeg
 sleep 0.3
 killall -15 ${shname}
