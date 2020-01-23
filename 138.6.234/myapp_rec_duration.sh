@@ -37,7 +37,7 @@ echo $conf_url
 echo $conf_destdir
 echo $conf_destimage
 
-ForceWaitSecond=3
+ForceWaitSecond=4
 #ForceWaitSecond=2
 echo "Wait for ${ForceWaitSecond} seconds to start"
 sleep ${ForceWaitSecond}
@@ -59,7 +59,7 @@ mkdir -p $conf_destdir
 
 #Test one
 ## -c copy , raw copy => 1.2-1.5 time large storage, no-cpu
-ffmpeg -nostdin -y -i "$conf_url" -c copy -timeout 1 -t 00:04:00 $conf_destimage
+ffmpeg -nostdin -y -i "$conf_url" -c copy -timeout 1 -t 00:02:00 $conf_destimage
 
 
 # .end Loop 

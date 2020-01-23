@@ -19,15 +19,18 @@ sleep ${ForceWaitSecond}
 ## signal(SIGINT , sigterm_handler); /* Interrupt (ANSI).    */
 ## signal(SIGTERM, sigterm_handler); /* Termination (ANSI).  */
 
-killall -INT ffmpeg
-killall -15 ffmpeg
-sleep 1
+pkill -INT ffmpeg
+sleep 0.3
+pkill -INT ffmpeg
+sleep 0.3
+pkill -INT ffmpeg
+sleep 0.3
+pkill -15 ffmpeg
 killall -15 ${shname}
-sleep 1
-
+sleep 0.3
 
 killall -9 ${shname}
-killall -15 ffmpeg
+pkill -15 ffmpeg
 
 
 ForceWaitSecond=3
@@ -47,6 +50,12 @@ ${fsname} 0861585040494534 4 &
 ${fsname} 0861585040494534 3 &
 ${fsname} 0861585040494534 2 &
 ${fsname} 0861585040494534 1 &
+
+${fsname} 0866758042049359 4 &
+${fsname} 0866758042049359 3 &
+${fsname} 0866758042049359 2 &
+${fsname} 0866758042049359 1 &
+
 
 
 echo "done"
